@@ -102,13 +102,27 @@
             color: var(--dark);
         }
 
+        /* Alert Banner */
+        .alert-banner {
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: 600;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
         /* Header Styles */
         header {
             background: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
-            top: 0;
+            top: 40px; /* Adjusted for alert banner */
             z-index: 1000;
         }
 
@@ -188,7 +202,7 @@
             color: white;
             text-align: center;
             padding: 180px 0 100px;
-            margin-top: 80px;
+            margin-top: 120px; /* Adjusted for header + alert banner */
         }
 
         .hero h2 {
@@ -772,6 +786,13 @@
     </style>
 </head>
 <body>
+    <!-- Alert Banner -->
+    <div class="alert-banner">
+        <div class="container">
+            <i class="fas fa-exclamation-circle"></i> Note: All the Cases listed in Court No. 5 will be heard in the 2nd half
+        </div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -1354,7 +1375,7 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 120, // Adjusted for header + alert banner
                         behavior: 'smooth'
                     });
                     
